@@ -32,9 +32,9 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 
 ## Motivation - Why Track/Detect hands with Neural Networks?
 
-There are several existing approaches to tracking hands in the computer vision domain. Incidentally, many of these approaches are rule based (e.g extracting background based on texture and boundary features, distinguishing between hands and background using color histograms and HOG classifiers,) making them not very robust. For example, these algorithms might get confused if the background is unusual or in situations where sharp changes in lighting conditions cause sharp changes in skin color or the tracked object becomes occluded.
+There are several existing approaches to tracking hands in the computer vision domain. Incidentally, many of these approaches are rule based (e.g extracting background based on texture and boundary features, distinguishing between hands and background using color histograms and HOG classifiers,) making them not very robust. For example, these algorithms might get confused if the background is unusual or in situations where sharp changes in lighting conditions cause sharp changes in skin color or the tracked object becomes occluded.(see [here for a review](https://www.cse.unr.edu/~bebis/handposerev.pdf) paper on hand pose estimation from the HCI perspective)
 
-With a sufficiently large datasets, neural networks provide opportunity to train models that perform well and address challenges of existing object tracking/detection algorithms - varied/poor lighting, diverse viewpoints and even occlusion. The main drawbacks to usage for real-time tracking/detection is that they can be complex, are relatively slow compared to tracking algorithms and it can be quite expensive to assembly a good dataset. But things are changing.
+With sufficiently large datasets, neural networks provide opportunity to train models that perform well and address challenges of existing object tracking/detection algorithms - varied/poor lighting, noisy environments, diverse viewpoints and even occlusion. The main drawbacks to usage for real-time tracking/detection is that they can be complex, are relatively slow compared to tracking-only algorithms and it can be quite expensive to assemble a good dataset. But things are changing with advances in fast neural networks.
 
 Furthermore, this entire area of work has been made more approachable by deep learning frameworks (such as the tensorflow object detection api) that simplify the process of training a model for custom object detection. More importantly, the advent of fast neural network models like ssd, faster r-cnn, rfcn (see [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) ) etc make neural networks an attractive candidate for real-time detection (and tracking) applications. Hopefully, this repo demonstrates this.
 
@@ -177,8 +177,20 @@ Victor Dibia, Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/victordibia/handtracking}},
-  commit = {4f57d6a0e4c030202a07a60bc1bb1ed1544bf679}
+  commit = {b523a27393ea1ee34f31451fad656849915c8f42}
 }
 ```
+
+## References
+
+Some related and referenced papers.
+
+Bambach, S., Lee, S., Crandall, D. J., and Yu, C. 2015. “Lending A Hand: Detecting Hands and Recognizing Activities in Complex Egocentric Interactions,” in ICCV, pp. 1949–1957 (available at https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Bambach_Lending_A_Hand_ICCV_2015_paper.html).
+
+Erol, A., Bebis, G., Nicolescu, M., Boyle, R. D., and Twombly, X. 2007. “Vision-based hand pose estimation: A review,” Computer Vision and Image Understanding (108:1–2), pp. 52–73 (doi: 10.1016/j.cviu.2006.10.012).
+
+Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C. Y., and Berg, A. C. 2016. “SSD: Single shot multibox detector,” in European conference on computer vision (Vol. 9905 LNCS), Springer Cham, pp. 21–37 (doi: 10.1007/978-3-319-46448-0_2).
+
+Betancourt, A., Morerio, P., Regazzoni, C. S., and Rauterberg, M. 2015. “The Evolution of First Person Vision Methods: A Survey,” IEEE Transactions on Circuits and Systems for Video Technology (25:5), pp. 744–760 (doi: 10.1109/TCSVT.2015.2409731)
 
 Apache Licence. See [LICENSE](LICENSE) for details. Copyright (c) 2017 Victor Dibia.
