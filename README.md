@@ -50,6 +50,8 @@ The hand detector model is built using data from the [Egohands Dataset](http://v
 
 <img src="images/egohandstrain.jpg" width="100%">
 
+If you will be using the Egohands dataset, you can cite them as follows:
+
 > Bambach, Sven, et al. "Lending a hand: Detecting hands and recognizing activities in complex egocentric interactions." Proceedings of the IEEE International Conference on Computer Vision. 2015.
 
 The Egohands dataset (zip file with labelled data) contains 48 folders of locations where video data was collected (100 images per folder).
