@@ -22,7 +22,6 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 | 11  | 640 * 480  | Macbook pro (i7, 2.5GHz, 16GB) | Run while visualizing results (image above) |
 
 > Note: The code in this repo is written and tested with Tensorflow `1.4.0-rc0`. Using a different version may result in [some errors](https://github.com/tensorflow/models/issues/1581).
-> Update: I just exported a [version of the inference graph using tensorflow 1.4.1](hand_inference_graph/frozen_inference_graph_141.pb). Behavior appears to be different compared to the previous graph (e.g the range of confidence appears higher for images without any hands, and the dimensions of bounding boxes appears different.) Feel free to explore.
 
 
 
@@ -31,7 +30,7 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 - Data preparation and network training in Tensorflow (Dataset, Import, Training)
 - Training the hand detection Model
 - Using the Detector to Detect/Track hands
-- Thoughts on Optimizations
+- Thoughts on Optimizations.
 
 ## Motivation - Why Track/Detect hands with Neural Networks?
 
@@ -139,6 +138,9 @@ This repo contains two scripts that tie all these steps together.
   python detect_single_threaded.py --source videos/chess.mov --fps 0
 ```
 
+> Update: I just exported a [version of the inference graph using tensorflow 1.4.1](hand_inference_graph/frozen_inference_graph_141.pb). Behavior appears to be different compared to the previous graph (e.g the range of confidence appears higher for images without any hands, and the dimensions of bounding boxes appears different.) Feel free to explore.
+
+<img src="compare.gif" width="100%">
 
 
 ## Thoughts on Optimization.
