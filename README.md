@@ -135,12 +135,12 @@ This repo contains two scripts that tie all these steps together.
 
 ```cmd
   # load and run detection on video at path "videos/chess.mov"
-  python detect_single_threaded.py --source videos/chess.mov 
+  python detect_single_threaded.py --source videos/chess.mov
 ```
 
 > Update: I just exported a [version of the inference graph using tensorflow 1.4.1](hand_inference_graph/frozen_inference_graph_141.pb). Behavior appears to be different compared to the previous graph (e.g the range of confidence appears higher for images without any hands, and the dimensions of bounding boxes appears different.) Feel free to explore.
 
-<img src="compare.gif" width="100%">
+<img src="images/compare.gif" width="100%">
 
 
 ## Thoughts on Optimization.
