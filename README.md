@@ -22,7 +22,7 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 | 11  | 640 * 480  | Macbook pro (i7, 2.5GHz, 16GB) | Run while visualizing results (image above) |
 
 > Note: The code in this repo is written and tested with Tensorflow `1.4.0-rc0`. Using a different version may result in [some errors](https://github.com/tensorflow/models/issues/1581).
-You may need to generate your own frozen model graph using the [model checkpoints](model-checkpoint) in the repo to fit your TF version.
+You may need to [generate your own frozen model](https://pythonprogramming.net/testing-custom-object-detector-tensorflow-object-detection-api-tutorial/?completed=/training-custom-objects-tensorflow-object-detection-api-tutorial/) graph using the [model checkpoints](model-checkpoint) in the repo to fit your TF version.
 
 
 
