@@ -22,6 +22,7 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 | 11  | 640 * 480  | Macbook pro (i7, 2.5GHz, 16GB) | Run while visualizing results (image above) |
 
 > Note: The code in this repo is written and tested with Tensorflow `1.4.0-rc0`. Using a different version may result in [some errors](https://github.com/tensorflow/models/issues/1581).
+You may need to generate your own frozen model graph using the [model checkpoints](model-checkpoint) in the repo to fit your TF version.
 
 
 
@@ -138,10 +139,9 @@ This repo contains two scripts that tie all these steps together.
   python detect_single_threaded.py --source videos/chess.mov
 ```
 
-> Update: I just exported a [version of the inference graph using tensorflow 1.4.1](hand_inference_graph/frozen_inference_graph_141.pb). Behavior appears to be different compared to the previous graph (e.g the range of confidence appears higher for images without any hands, and the dimensions of bounding boxes appears different.) Feel free to explore.
-
-<img src="images/compare.gif" width="100%">
-
+> Update: If you do have errors loading the frozen inference graph in this repo, feel free to generate a new graph that fits your TF version from the model-checkpoint in this repo.
+Use the [export_inference_graph.py](https://github.com/tensorflow/models/blob/master/research/object_detection/export_inference_graph.py) script provided in the tensorflow object detection api repo.
+More guidance on this [here](https://pythonprogramming.net/testing-custom-object-detector-tensorflow-object-detection-api-tutorial/?completed=/training-custom-objects-tensorflow-object-detection-api-tutorial/).
 
 ## Thoughts on Optimization.
 A few things that led to noticeable performance increases.
