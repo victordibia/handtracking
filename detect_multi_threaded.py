@@ -1,5 +1,4 @@
-from utils import detector_utils as detector_utils
-from utils import tracker_utils as tracker_utils
+from utils import detector_utils as detector_utils 
 import cv2
 import tensorflow as tf
 import multiprocessing
