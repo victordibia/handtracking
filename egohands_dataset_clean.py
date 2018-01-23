@@ -2,6 +2,7 @@ import scipy.io as sio
 import numpy as np
 import os
 import gc
+import six.moves.urllib as urllib
 import cv2
 import time
 import xml.etree.cElementTree as ET
@@ -9,7 +10,7 @@ import random
 import shutil as sh
 from shutil import copyfile
 import zipfile
-import six.moves.urllib as urllib
+
 import csv
 
 
@@ -28,6 +29,8 @@ def get_bbox_visualize(base_path, dir):
                 img_path = base_path + dir + "/" + f
                 image_path_array.append(img_path)
 
+    #sort image_path_array to ensure its in the low to high order expected in polygon.mat
+    image_path_array.sort()
     boxes = sio.loadmat(
         base_path + dir + "/polygons.mat")
     # there are 100 of these per folder in the egohands dataset
@@ -198,6 +201,15 @@ def rename_files(image_dir):
 
     generate_csv_files("egohands/_LABELLED_SAMPLES/")
 
+def extract_folder(dataset_path):
+    print("Egohands dataset already downloaded.\nGenerating CSV files")
+    if not os.path.exists("egohands"):
+        zip_ref = zipfile.ZipFile(dataset_path, 'r')
+        print("> Extracting Dataset files")
+        zip_ref.extractall("egohands")
+        print("> Extraction complete")
+        zip_ref.close()
+        rename_files("egohands/_LABELLED_SAMPLES/")
 
 def download_egohands_dataset(dataset_url, dataset_path):
     is_downloaded = os.path.exists(dataset_path)
@@ -207,17 +219,10 @@ def download_egohands_dataset(dataset_url, dataset_path):
         opener = urllib.request.URLopener()
         opener.retrieve(dataset_url, dataset_path)
         print("> download complete")
+        extract_folder(dataset_path);
 
     else:
-        print("Egohands dataset already downloaded.\nGenerating CSV files")
-
-        if not os.path.exists("egohands"):
-            zip_ref = zipfile.ZipFile(dataset_path, 'r')
-            print("> Extracting Dataset files")
-            zip_ref.extractall("egohands")
-            print("> Extraction complete")
-            zip_ref.close()
-            rename_files("egohands/_LABELLED_SAMPLES/")
+        extract_folder(dataset_path)
 
 
 EGOHANDS_DATASET_URL = "http://vision.soic.indiana.edu/egohands_files/egohands_data.zip"
