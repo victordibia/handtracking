@@ -33,6 +33,8 @@ You may need to [generate your own frozen model](https://pythonprogramming.net/t
 - Using the Detector to Detect/Track hands
 - Thoughts on Optimizations.
 
+> P.S if you are using or have used the models provided here, feel free to reach out on twitter ([@vykthur](https://twitter.com/vykthur)) and share your work!
+
 ## Motivation - Why Track/Detect hands with Neural Networks?
 
 There are several existing approaches to tracking hands in the computer vision domain. Incidentally, many of these approaches are rule based (e.g extracting background based on texture and boundary features, distinguishing between hands and background using color histograms and HOG classifiers,) making them not very robust. For example, these algorithms might get confused if the background is unusual or in situations where sharp changes in lighting conditions cause sharp changes in skin color or the tracked object becomes occluded.(see [here for a review](https://www.cse.unr.edu/~bebis/handposerev.pdf) paper on hand pose estimation from the HCI perspective)
@@ -170,6 +172,15 @@ An example of this is with my primary use case where I am interested in understa
 ## Acknowledgements
 
 This work also served as an intense weekend crash course for me to learn Python and Tensorflow. It would be impossible without the Egohands Dataset, many thanks to the authors! The tensorflow custom object detection guides by [Harrison from pythonprogramming](https://pythonprogramming.net/training-custom-objects-tensorflow-object-detection-api-tutorial/) and [Dat Tran](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9) were immensely helpful to this learning process. And ofcourse, many thanks to the Tensorflow authors! Its a great frameworks!
+
+## Projects that use this Repo
+
+A few people have used the handtracking sample code/models in creating some awesome projects and I'd like to highlight them here!
+- (Alphabot)[https://github.com/drewgillson/alphabot]: a screen-less interactive spelling primer powered by computer vision
+- (Wall Z the Robot)[https://challengerocket.com/megatran/Wall-Z-the-Robot-8a34db.html]
+
+
+If you have created something cool, send me a note (or tweet) and I'll be happy to include it here!
 
 ## Citing this tutorial
 
