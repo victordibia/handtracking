@@ -4,6 +4,8 @@ This repo documents steps and scripts used to train a hand detector using Tensor
 
 The goal of this repo/post is to demonstrate how neural networks can be applied to the (hard) problem of tracking hands (egocentric and other views). Better still, provide code that can be adapted to other uses cases.
 
+If you use this tutorial or models in your research or project, please cite [this](#citing-this-tutorial).
+
 Here is the detector in action.
 
 <img src="images/hand1.gif" width="33.3%"><img src="images/hand2.gif" width="33.3%"><img src="images/hand3.gif" width="33.3%">
