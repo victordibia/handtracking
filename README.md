@@ -200,10 +200,13 @@ Victor Dibia, Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow
   commit = {b523a27393ea1ee34f31451fad656849915c8f42}
 }
 ```
+P.S. I came across this excellent [repository](https://github.com/xinghaochen/awesome-hand-pose-estimation) for those interested in `hand pose estimation`. There are several great papers and videos there, check them out!
 
 ## References
 
 Some related and referenced papers.
+
+
 
 Bambach, S., Lee, S., Crandall, D. J., and Yu, C. 2015. “Lending A Hand: Detecting Hands and Recognizing Activities in Complex Egocentric Interactions,” in ICCV, pp. 1949–1957 (available at https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Bambach_Lending_A_Hand_ICCV_2015_paper.html).
 
