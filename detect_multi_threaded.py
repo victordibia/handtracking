@@ -15,7 +15,6 @@ score_thresh = 0.2
 # Create a worker thread that loads graph and
 # does detection on images in an input queue and puts it on an output queue
 
-
 def worker(input_q, output_q, cap_params, frame_processed):
     print(">> loading frozen model for worker")
     detection_graph, sess = detector_utils.load_inference_graph()
@@ -30,6 +29,7 @@ def worker(input_q, output_q, cap_params, frame_processed):
             # draw bounding boxes
             detector_utils.draw_box_on_image(
                 cap_params['num_hands_detect'], cap_params["score_thresh"], scores, boxes, cap_params['im_width'], cap_params['im_height'], frame)
+            # add frame annotated with bounding box to queue
             output_q.put(frame)
             frame_processed += 1
         else:
