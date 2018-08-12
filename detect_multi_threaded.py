@@ -84,6 +84,8 @@ if __name__ == '__main__':
     fps = 0
     index = 0
 
+    cv2.namedWindow('Multi-Threaded Detection', cv2.WINDOW_NORMAL)
+
     while True:
         frame = video_capture.read()
         frame = cv2.flip(frame, 1)
@@ -105,7 +107,7 @@ if __name__ == '__main__':
                 if (args.fps > 0):
                     detector_utils.draw_fps_on_image(
                         "FPS : " + str(int(fps)), output_frame)
-                cv2.imshow('Muilti - threaded Detection', output_frame)
+                cv2.imshow('Multi-Threaded Detection', output_frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break
             else:
