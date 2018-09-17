@@ -89,3 +89,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Downloaded datasets
+egohands/
+egohands_data.zip
+images/test/
+images/train/
