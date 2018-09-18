@@ -157,6 +157,8 @@ cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
 ```
 - Keeping your input image small will increase fps without any significant accuracy drop.(I used about 320 x 240 compared to the 1280 x 720 which my webcam provides).
 
+- Model Quantization. Moving from the current 32 bit to 8 bit can achieve up to 4x reduction in memory required to load and store models. One way to further speed up this model is to explore the use of [8-bit fixed point quantization](https://heartbeat.fritz.ai/8-bit-quantization-and-tensorflow-lite-speeding-up-mobile-inference-with-low-precision-a882dfcafbbd).
+
 Performance can also be increased by a clever combination of tracking algorithms with the already decent detection and this is something I am still experimenting with. Have ideas for optimizing better, please share!
 
 <img src="images/general.jpg" width="100%">
