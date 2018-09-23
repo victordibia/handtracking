@@ -4,7 +4,6 @@ import tensorflow as tf
 import datetime
 import argparse
 
-cap = cv2.VideoCapture(0)
 detection_graph, sess = detector_utils.load_inference_graph()
 
 if __name__ == '__main__':
