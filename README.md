@@ -26,6 +26,15 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 > Note: The code in this repo is written and tested with Tensorflow `1.4.0-rc0`. Using a different version may result in [some errors](https://github.com/tensorflow/models/issues/1581).
 You may need to [generate your own frozen model](https://pythonprogramming.net/testing-custom-object-detector-tensorflow-object-detection-api-tutorial/?completed=/training-custom-objects-tensorflow-object-detection-api-tutorial/) graph using the [model checkpoints](model-checkpoint) in the repo to fit your TF version.
 
+The tensorflow object detection repo has a [python file for exporting a checkpoint to frozen graph here](https://github.com/tensorflow/models/blob/master/research/object_detection/export_inference_graph.py).  You can copy it to the current directory and use it as follows
+
+```
+python3 export_inference_graph.py \
+    --input_type image_tensor \
+    --model-checkpoint/ssd_mobilenet_v1_pets.config \
+    --model-checkpoint/model.ckpt-200002 \ 
+    --output_directory hand_inference_graph
+```
 
 
 **Content of this document**
