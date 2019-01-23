@@ -191,7 +191,7 @@ This work also served as an intense weekend crash course for me to learn Python 
 A few people have used the handtracking sample code/models in creating some awesome projects and I'd like to highlight them here!
 - (Alphabot)[https://github.com/drewgillson/alphabot]: a screen-less interactive spelling primer powered by computer vision
 - (Wall Z the Robot)[https://challengerocket.com/megatran/Wall-Z-the-Robot-8a34db.html]
-
+- (Predicting hand pose)[https://github.com/MrEliptik/HandPose] : Using the output of a hand detector to predict hand pose by Victor Meunier.
 
 If you have created something cool, send me a note (or tweet) and I'll be happy to include it here!
 
