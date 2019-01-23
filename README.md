@@ -192,6 +192,7 @@ A few people have used the handtracking sample code/models in creating some awes
 - (Alphabot)[https://github.com/drewgillson/alphabot]: a screen-less interactive spelling primer powered by computer vision
 - (Wall Z the Robot)[https://challengerocket.com/megatran/Wall-Z-the-Robot-8a34db.html]
 - (Predicting hand pose)[https://github.com/MrEliptik/HandPose] : Using the output of a hand detector to predict hand pose by Victor Meunier.
+- (Hand Tracking Pong)[https://github.com/alvinwan/hand-tracking-pong]: Hand Tracking ping pong.
 
 If you have created something cool, send me a note (or tweet) and I'll be happy to include it here!
 
