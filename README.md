@@ -96,6 +96,8 @@ Some initial work needs to be done to the Egohands dataset to transform it into 
 - Reads in `polygons.mat` for each folder, generates bounding boxes and visualizes them to ensure correctness (see image above).
 - Once the script is done running, you should have an images folder containing three folders - train, test and eval. Each of these folders should also contain a csv label document each - `train_labels.csv`, `test_labels.csv`  that can be used to generate `tfrecords`
 
+> `python egohands_dataset_clean.py`
+
 Note: While the egohands dataset provides four separate labels for hands (own left, own right, other left, and other right), for my purpose, I am only interested in the general `hand` class and label all training data as `hand`. You can modify the data prep script to generate `tfrecords` that support 4 labels.
 
 Next: convert your dataset + csv files to tfrecords. A helpful guide on this can be found [here](https://pythonprogramming.net/creating-tfrecord-files-tensorflow-object-detection-api-tutorial/).For each folder, you should be able to generate  `train.record`, `test.record` required in the training process.
