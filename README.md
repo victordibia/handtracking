@@ -46,6 +46,16 @@ python3 export_inference_graph.py \
 
 > P.S if you are using or have used the models provided here, feel free to reach out on twitter ([@vykthur](https://twitter.com/vykthur)) and share your work!
 
+## Update 3/5/19 - You can now use the model in the Browser using Handtrack.js and Tensorflow.js
+
+I exported the model using the Tensorflow.js converter and have it wrapped into an easy to use javascript library - [Handtrack.js](https://victordibia.github.io/handtrack.js/). You can do hand tracking in 3 lines of code, no installation, no model training, all in the browser.
+
+<img src="images/doodle.gif" width="100%">
+
+Post:  [Hand Tracking Interactions in the Browser using Tensorflow.js and 3 lines of code.](https://medium.com/@victor.dibia/handtrackjs-677c29c1d585)
+Github: [Handtrack.js](https://victordibia.github.io/handtrack.js/)
+
+
 ## Motivation - Why Track/Detect hands with Neural Networks?
 
 There are several existing approaches to tracking hands in the computer vision domain. Incidentally, many of these approaches are rule based (e.g extracting background based on texture and boundary features, distinguishing between hands and background using color histograms and HOG classifiers,) making them not very robust. For example, these algorithms might get confused if the background is unusual or in situations where sharp changes in lighting conditions cause sharp changes in skin color or the tracked object becomes occluded.(see [here for a review](https://www.cse.unr.edu/~bebis/handposerev.pdf) paper on hand pose estimation from the HCI perspective)
