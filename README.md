@@ -52,7 +52,10 @@ I exported the model using the Tensorflow.js converter and have it wrapped into 
 
 <img src="images/doodle.gif" width="100%">
 
+Learn more below
+
 Post:  [Hand Tracking Interactions in the Browser using Tensorflow.js and 3 lines of code.](https://medium.com/@victor.dibia/handtrackjs-677c29c1d585)
+
 Github: [Handtrack.js](https://victordibia.github.io/handtrack.js/)
 
 
