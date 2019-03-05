@@ -46,7 +46,7 @@ python3 export_inference_graph.py \
 
 > P.S if you are using or have used the models provided here, feel free to reach out on twitter ([@vykthur](https://twitter.com/vykthur)) and share your work!
 
-## Update 3/5/19 - You can now use the model in the Browser using Handtrack.js and Tensorflow.js
+## Update 3/5/19 - You can now use the model in the Browser using Handtrack.js
 
 I exported the model using the Tensorflow.js converter and have it wrapped into an easy to use javascript library - [Handtrack.js](https://victordibia.github.io/handtrack.js/). You can do hand tracking in 3 lines of code, no installation, no model training, all in the browser.
 
