@@ -54,9 +54,9 @@ I exported the model using the Tensorflow.js converter and have it wrapped into 
 
 Learn more below
 
-Post:  [Hand Tracking Interactions in the Browser using Tensorflow.js and 3 lines of code.](https://medium.com/@victor.dibia/handtrackjs-677c29c1d585)
-
-Github: [Handtrack.js](https://victordibia.github.io/handtrack.js/)
+- Blog Post:  [Hand Tracking Interactions in the Browser using Tensorflow.js and 3 lines of code.](https://medium.com/@victor.dibia/handtrackjs-677c29c1d585)
+- Github: [Handtrack.js Github Repo](https://github.com/victordibia/handtrack.js)
+- Live Demo : [Handtrack.js Examples in the Browser](https://victordibia.github.io/handtrack.js/)
 
 
 ## Motivation - Why Track/Detect hands with Neural Networks?
