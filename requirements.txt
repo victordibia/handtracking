@@ -1,0 +1,7 @@
+scipy==1.2.0
+opencv_python==3.3.0.10
+six==1.11.0
+numpy==1.16.0
+protobuf==3.7.1
+object_detection==0.0.3
+tensorflow==1.13.1
