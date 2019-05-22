@@ -215,18 +215,24 @@ If you have created something cool, send me a note (or tweet) and I'll be happy 
 
 If you'd like to cite this work, use the below.
 
-Victor Dibia, Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow, (2017), GitHub repository, https://github.com/victordibia/handtracking
+Victor Dibia, HandTrack: A Library For Prototyping Real-time Hand TrackingInterfaces using Convolutional Neural Networks, https://github.com/victordibia/handtracking
+
+> Paper abstract of the [paper is here](docs/handtrack.pdf). (a full paper will be added when complete).
+
 ```bib
 @misc{Dibia2017,
   author = {Victor, Dibia},
-  title = {Real-time Hand Tracking Using SSD on Tensorflow },
+  title = {HandTrack: A Library For Prototyping Real-time Hand TrackingInterfaces using Convolutional Neural Networks},
   year = {2017},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/victordibia/handtracking}},
-  commit = {b523a27393ea1ee34f31451fad656849915c8f42}
+  url = {https://github.com/victordibia/handtracking/tree/master/docs/handtrack.pdf},
+  howpublished = {\url{https://github.com/victordibia/handtracking}} 
 }
 ```
+
+I
+
 P.S. I came across this excellent [repository](https://github.com/xinghaochen/awesome-hand-pose-estimation) for those interested in `hand pose estimation`. There are several great papers and videos there, check them out!
 
 ## References
