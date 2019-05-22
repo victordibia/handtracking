@@ -211,11 +211,11 @@ A few people have used the handtracking sample code/models in creating some awes
 
 If you have created something cool, send me a note (or tweet) and I'll be happy to include it here!
 
-## Citing this tutorial ([see abstract](docs/handtrack.pdf))
+## Citing this Work ([see abstract](https://github.com/victordibia/handtracking/tree/master/docs/handtrack.pdf))
 
-> Paper abstract of the [paper is here](docs/handtrack.pdf). (a full paper will be added when complete).
+> Paper abstract of the [paper is here](https://github.com/victordibia/handtracking/tree/master/docs/handtrack.pdf). (a full paper will be added when complete).
 
-If you'd like to cite this work, use the below.
+If you use this code in your project/paper/research and would like to cite this work, use the below.
 
 Victor Dibia, HandTrack: A Library For Prototyping Real-time Hand TrackingInterfaces using Convolutional Neural Networks, https://github.com/victordibia/handtracking
 
