@@ -210,6 +210,8 @@ A few people have used the handtracking sample code/models in creating some awes
 - (Hand Tracking Pong)[https://github.com/alvinwan/hand-tracking-pong]: Hand Tracking ping pong.
 - (AiryDraw!)[https://github.com/amirhossein-ahmadian/airydraw] is a simple augmented reality program which gives you the feeling that you can draw in the air just using your hand.
 
+- (Gesture Recognition)[https://github.com/zzeitt/Gesture-Recognition] Uses this repo to  extract hand bounding boxes and runs a classifier on top of the extracted hand to detect hand gestures (fist, two fingers and open palm. Neat!)
+
 If you have created something cool, send me a note (or tweet) and I'll be happy to include it here!
 
 ## Citing this Work ([see abstract](https://github.com/victordibia/handtracking/tree/master/docs/handtrack.pdf))
