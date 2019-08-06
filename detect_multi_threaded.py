@@ -2,7 +2,7 @@ from utils import detector_utils as detector_utils
 import cv2
 import tensorflow as tf
 import multiprocessing
-from multiprocessing import Queue, Pool
+from multiprocessing import Queue, Pool, Manager
 import time
 from utils.detector_utils import WebcamVideoStream
 import datetime
@@ -14,9 +14,9 @@ score_thresh = 0.2
 # Create a worker thread that loads graph and
 # does detection on images in an input queue and puts it on an output queue
 
-
-def worker(input_q, output_q, cap_params, frame_processed):
+def worker(input_q, output_q, cap_params, frame_processed, boxes_dict=None):
     print(">> loading frozen model for worker")
+    print(id(input_q))
     detection_graph, sess = detector_utils.load_inference_graph()
     sess = tf.Session(graph=detection_graph)
     while True:
@@ -29,6 +29,12 @@ def worker(input_q, output_q, cap_params, frame_processed):
 
             boxes, scores = detector_utils.detect_objects(
                 frame, detection_graph, sess)
+
+            #puts the boxes and scores into a queue if one is provided
+            if boxes_dict is not None:
+                boxes_dict.update( {"boxes" : boxes} )
+                boxes_dict.update( {"scores" : scores} )
+            
             # draw bounding boxes
             detector_utils.draw_box_on_image(
                 cap_params['num_hands_detect'], cap_params["score_thresh"],
@@ -101,10 +107,20 @@ if __name__ == '__main__':
         type=int,
         default=5,
         help='Size of the queue.')
+    parser.add_argument(
+        '-reuse',
+        '--reuse_frames',
+        dest='reuse_frames',
+        type=int,
+        default=0,
+        help='Reuse boxes from previous frame while model is not finished detecting.')
     args = parser.parse_args()
 
     input_q = Queue(maxsize=args.queue_size)
     output_q = Queue(maxsize=args.queue_size)
+    boxes_dict = Manager().dict()
+    boxes_dict["boxes"]=None
+    boxes_dict["scores"]=None
 
     video_capture = WebcamVideoStream(
         src=args.video_source, width=args.width, height=args.height).start()
@@ -120,8 +136,13 @@ if __name__ == '__main__':
     print(cap_params, args)
 
     # spin up workers to paralleize detection.
-    pool = Pool(args.num_workers, worker,
-                (input_q, output_q, cap_params, frame_processed))
+    # use boxes_dict only when reusing frames.
+    if (args.reuse_frames > 0):
+        pool = Pool(args.num_workers, worker,
+                    (input_q, output_q, cap_params, frame_processed, boxes_dict))
+    else:
+        pool = Pool(args.num_workers, worker,
+                    (input_q, output_q, cap_params, frame_processed))
 
     start_time = datetime.datetime.now()
     num_frames = 0
@@ -135,15 +156,30 @@ if __name__ == '__main__':
         frame = cv2.flip(frame, 1)
         index += 1
 
-        input_q.put(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-        output_frame = output_q.get()
+        print("in_q: " + str(input_q.qsize()))
+        print("out_q: " + str(output_q.qsize()))
+        if (args.reuse_frames > 0):
+            #if there is a next frame ready, get the next frame
+            if (output_q.qsize() > 0 or boxes_dict['scores'] is None):
+                input_q.put(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                try: output_frame = output_q.get_nowait()
+                except: output_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            #if there is none, use the old set of boxes
+            else:
+                output_frame = detector_utils.draw_box_on_image(
+                cap_params['num_hands_detect'], cap_params["score_thresh"],
+                boxes_dict['scores'], boxes_dict['boxes'], cap_params['im_width'], cap_params['im_height'],
+                cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+        else:
+            input_q.put(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+            output_frame = output_q.get()
 
         output_frame = cv2.cvtColor(output_frame, cv2.COLOR_RGB2BGR)
 
         elapsed_time = (datetime.datetime.now() - start_time).total_seconds()
         num_frames += 1
         fps = num_frames / elapsed_time
-        # print("frame ",  index, num_frames, elapsed_time, fps)
+        # print("frame ", index, num_frames, elapsed_time, fps)
 
         if (output_frame is not None):
             if (args.display > 0):
