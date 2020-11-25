@@ -1,6 +1,6 @@
-## Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow.
+## Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow 2.
 
-This repo documents steps and scripts used to train a hand detector using Tensorflow (Object Detection API). As with any DNN based task, the most expensive (and riskiest) part of the process has to do with finding or creating the right (annotated) dataset. I was interested mainly in detecting hands on a table (egocentric view point). I experimented first with the [Oxford Hands Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands/) (the results were not good). I then tried the [Egohands Dataset](http://vision.soic.indiana.edu/projects/egohands/) which was a much better fit to my requirements.
+This repo documents steps and scripts used to train a hand detector using Tensorflow 2 (Object Detection API). As with any DNN based task, the most expensive (and riskiest) part of the process has to do with finding or creating the right (annotated) dataset. I was interested mainly in detecting hands on a table (egocentric view point). I experimented first with the [Oxford Hands Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands/) (the results were not good). I then tried the [Egohands Dataset](http://vision.soic.indiana.edu/projects/egohands/) which was a much better fit to my requirements.
 
 The goal of this repo/post is to demonstrate how neural networks can be applied to the (hard) problem of tracking hands (egocentric and other views). Better still, provide code that can be adapted to other uses cases.
 
@@ -23,7 +23,7 @@ Both examples above were run on a macbook pro **CPU** (i7, 2.5GHz, 16GB). Some f
 | 16  | 320 * 240  | Macbook pro (i7, 2.5GHz, 16GB) | Run while visualizing results (image above) |
 | 11  | 640 * 480  | Macbook pro (i7, 2.5GHz, 16GB) | Run while visualizing results (image above) |
 
-> Note: The code in this repo is written and tested with Tensorflow `1.4.0-rc0`. Using a different version may result in [some errors](https://github.com/tensorflow/models/issues/1581).
+> Note: The code in this repo is written and tested with Tensorflow `2.3.1`. Using a different version may result in [some errors](https://github.com/tensorflow/models/issues/1581).
 You may need to [generate your own frozen model](https://pythonprogramming.net/testing-custom-object-detector-tensorflow-object-detection-api-tutorial/?completed=/training-custom-objects-tensorflow-object-detection-api-tutorial/) graph using the [model checkpoints](model-checkpoint) in the repo to fit your TF version.
 
 The tensorflow object detection repo has a [python file for exporting a checkpoint to frozen graph here](https://github.com/tensorflow/models/blob/master/research/object_detection/export_inference_graph.py).  You can copy it to the current directory and use it as follows
