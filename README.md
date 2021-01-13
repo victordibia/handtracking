@@ -212,7 +212,9 @@ A few people have used the handtracking sample code/models in creating some awes
 
 - (Gesture Recognition)[https://github.com/zzeitt/Gesture-Recognition] Uses this repo to  extract hand bounding boxes and runs a classifier on top of the extracted hand to detect hand gestures (fist, two fingers and open palm. Neat!)
 
-If you have created something cool, send me a note (or tweet) and I'll be happy to include it here!
+- (Video Gesture Recognition)[https://github.com/ashwatc/Video_Gesture_Overlay] and Overlay (Using Machine Learning and Computer Vision). This project uses the handtracking models to prototype quick controls for video conferencing scenarios (e.g. I agree, yes, or stepping away from the video call). Check it out!
+
+If you have created something cool, send me a note (or (tweet)[https://twitter.com/vykthur]) and I'll be happy to include it here!
 
 ## Citing this Work ([see abstract](https://github.com/victordibia/handtracking/tree/master/docs/handtrack.pdf))
 
