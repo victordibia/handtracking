@@ -1,4 +1,4 @@
-## Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow.
+﻿## Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow.
 
 This repo documents steps and scripts used to train a hand detector using Tensorflow (Object Detection API). As with any DNN based task, the most expensive (and riskiest) part of the process has to do with finding or creating the right (annotated) dataset. I was interested mainly in detecting hands on a table (egocentric view point). I experimented first with the [Oxford Hands Dataset](http://www.robots.ox.ac.uk/~vgg/data/hands/) (the results were not good). I then tried the [Egohands Dataset](http://vision.soic.indiana.edu/projects/egohands/) which was a much better fit to my requirements.
 
@@ -57,6 +57,16 @@ Learn more below
 - Blog Post:  [Hand Tracking Interactions in the Browser using Tensorflow.js and 3 lines of code.](https://medium.com/@victor.dibia/handtrackjs-677c29c1d585)
 - Github: [Handtrack.js Github Repo](https://github.com/victordibia/handtrack.js)
 - Live Demo : [Handtrack.js Examples in the Browser](https://victordibia.github.io/handtrack.js/)
+
+## Update 15/09/2021 - Android example using a TFLite model
+
+![android_sample_1](images/android_sample_1.png)
+
+The trained model checkpoints are converted to the [TensorFlow Lite](https://www.tensorflow.org/lite) format so that they can used in both Android and iOS apps. 
+
+The Android app which uses the hand tracking model from this repo is available here -> [shubham0204/Hand_Detection_TFLite_Android](https://github.com/shubham0204/Hand_Detection_TFLite_Android)
+
+Also, a step-by-step guide on how to convert the model checkpoints to a TFLite model ( `.tflite` ) is available as a IPYNB notebook ( open it in Google Colab ) -> [shubham0204/Google_Colab_Notebooks/Hand_Tracking_Model_TFLite_Conversion.ipynb](https://github.com/shubham0204/Google_Colab_Notebooks/blob/main/Hand_Tracking_Model_TFLite_Conversion.ipynb)
 
 
 ## Motivation - Why Track/Detect hands with Neural Networks?
