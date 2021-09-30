@@ -1,0 +1,35 @@
+item {
+  id: 1
+  name: 'open'
+}
+
+item {
+  id: 2
+  name: 'closed'
+}
+
+item {
+  id: 3
+  name: 'pinch'
+}
+
+item {
+  id: 4
+  name: 'point'
+}
+
+item {
+  id: 5
+  name: 'face'
+}
+
+item {
+  id: 6
+  name: 'tip'
+}
+
+item {
+  id: 7
+  name: 'pinchtip'
+}
+
